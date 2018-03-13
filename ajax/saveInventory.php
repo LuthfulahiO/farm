@@ -1,4 +1,5 @@
 <?php
+require_once "../includes/initialize.php";
 if(sizeof($_POST)>0){
     $type = (int) $_POST['type'];
     if($type==0){

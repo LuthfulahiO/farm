@@ -1,0 +1,556 @@
+/*
+   color:#6772e5 -- mor
+   color:#24b47e veya #3ecf8e -- yeþil gibi
+   color:#32325d kapalý mor içinde #9cdbff
+   color:#b76ac4 -- açýk mor
+
+
+   base color: #75d380
+*/
+
+@font-face {
+   font-family: 'MuseoRegular';
+   src: url('../fonts/museo/Museo100-Regular-webfont.otf') format('opentype');
+   font-weight: 100;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'MuseoRegular';
+   src: url('../fonts/museo/Museo300-Regular-webfont.otf') format('opentype'), url('../fonts/museo/Museo300-Regular-webfont.ttf') format('truetype');
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'MuseoRegular';
+   src: url('../fonts/museo/Museo500-Regular-webfont.woff') format('woff'), url('../fonts/museo/Museo500-Regular-webfont.eot') format('embedded-opentype'), url('../fonts/museo/Museo500-Regular-webfont.svg') format('svg'), url('../fonts/museo/Museo500-Regular-webfont.ttf') format('truetype');
+   font-weight: 500;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'MuseoRegular';
+   src: url('../fonts/museo/Museo700-Regular-webfont.ttf') format('truetype');
+   font-weight: 600;
+   font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSlab500Regular';
+    src: url('../fonts/museo/Museo_Slab_300-webfont.eot');
+    src: url('../fonts/museo/Museo_Slab_300-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/museo/Museo_Slab_300-webfont.woff') format('woff'),
+         url('../fonts/museo/Museo_Slab_300-webfont.ttf') format('truetype'),
+         url('../fonts/museo/Museo_Slab_300-webfont.svg#Museo300Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+   font-family: 'entypo-fontello';
+   src: url('../fonts/entypo-fontello.html') format('woff'), url('../fonts/entypo-fontello-2.html') format('svg'), url('../fonts/entypo-fontello-3.html') format('embedded-opentype');
+}
+
+
+a,
+a:hover,
+.v-icon,
+.btn-link,
+.btn-default:hover,
+.required,
+.primary-font-color,
+.primary-color,
+.feature-box .icon,
+.call-to-action .title strong,
+.section-title strong,
+.v-search-items .star-vote li,
+.travel-form.icon-tabs .nav-pills > li > a:hover,
+.travel-form.icon-tabs .nav-pills > li.active:hover > a,
+.travel-form.icon-tabs .nav-pills > li.active > a,
+.travel-form.icon-tabs .nav-pills > li.active > a:focus,
+.xblog-large-info-meta-link:hover,
+.xblog-large-info-title a:hover,
+.xblog-medium-info-meta-link:hover,
+.xblog-medium-info-title a:hover,
+.-format-quote .xblog-quote-icon,
+nav.xsearch-navbar.navbar-light .navbar-nav .active > .nav-link,
+.cbp-l-grid-masonry-projects-title:hover,
+[data-type].primary-color + .typed-cursor,
+.c-breadcrumb-6.-style-default .c-breadcrumb-6-item:last-child .c-breadcrumb-6-link,
+.c-breadcrumb-6.-style-icons .c-breadcrumb-6-item:last-child .c-breadcrumb-6-link,
+.pagination > li > a, .pagination > li > span,
+ul.i-list.medium.bordered .icon,
+.tc-services-style4 .services-icon,
+.tc-services-style5 .services-icon,
+.main-color .xsocial-icons-simple a:hover,
+.pi-section-grey .xsocial-icons-simple a:hover,
+.c-breadcrumb-6-item:hover .c-breadcrumb-6-link,
+.c-breadcrumb-6-item.active .c-breadcrumb-6-link,
+.timeline-movement .date,
+.feature-box-core .feature-box-core-category,
+.counters .counter.bb strong,
+.accordion.v6 .accordion-tag,
+.stories_wrapper .quotes:before,
+.btn.btn-outline-primary, 
+blockquote.quote-simple cite,
+blockquote.v3 cite,
+blockquote.v3::before,
+.srv-container .srv-name a:hover,
+.portfolio-item-title a:hover,
+.post-content-wrap-inner a:hover,
+.accordion .card-header > h5 a:hover,
+.footer.footer-2 .main .latest-news a:hover,
+.footer.footer-2 a:hover,
+.tg-filter-name:hover,
+.pracia-grid .tg-filter:hover,
+.camberra-grid .tg-filter:hover,
+.tg-dropdown-holder:hover,
+.xsearch-items h3.search-item-caption a:hover,
+.platform-block-title:hover,
+.platform-block-steps a:hover,
+.post-content-wrap .post-title a:hover,
+.counters span.counter-append,
+.related-wrap-title:hover,
+.related-wrap-title a:hover footer.footer-pompis a:hover,
+figure.product-item .product-name a:hover,
+.cart-table .cart_item a:hover,
+.blog-item .read-more-button:hover,
+.blog-item a:hover,
+.blog-item:hover h2:hover, 
+.blog-item:hover .link-to-post,
+.blog-item:hover a,
+footer.footer-emel a:hover,
+.counters-emel.counters .counter .counter-icon.top-icon,
+.testimonial-two blockquote p:before,
+.testimonial-two blockquote p:after,
+.testimonial-two blockquote p:before,
+.testimonial-two blockquote p:after,
+footer.footer-emel #newsletterForm .btn,
+.sidebar .list-group-item.list-toggle > a:hover{
+   color: #8cc747;
+   color: #7cbf34;
+}
+
+.btn.transparent-light:hover,
+.btn.transparent-dark:hover {
+   color: #7cbf34 !important;
+}
+
+.page-item.active .page-link,
+.xblog-item.-format-standard .xblog-info:first-child,
+.xblog-item.-format-quote .xblog-info:first-child,
+.xblog-item.-format-aside .xblog-info:first-child,
+.xblog-item.-format-status .xblog-info:first-child,
+.xblog-item.-format-chat .xblog-info:first-child,
+.xblog-item.-format-link .xblog-info:first-child,
+.xblog-medium-item.-format-standard .xblog-medium-info:first-child,
+.xblog-medium-item.-format-quote .xblog-medium-info:first-child,
+.xblog-medium-item.-format-aside .xblog-medium-info:first-child,
+.xblog-medium-item.-format-status .xblog-medium-info:first-child,
+.xblog-medium-item.-format-chat .xblog-medium-info:first-child,
+.xblog-medium-item.-format-link .xblog-medium-info:first-child,
+.xblog-large-item.-format-standard .xblog-large-info:first-child,
+.xblog-large-item.-format-quote .xblog-large-info:first-child,
+.xblog-large-item.-format-aside .xblog-large-info:first-child,
+.xblog-large-item.-format-status .xblog-large-info:first-child,
+.xblog-large-item.-format-chat .xblog-large-info:first-child,
+.xblog-large-item.-format-link .xblog-large-info:first-child,
+.form-control:focus,
+.form-control:active,
+.feature-box .icon.bordered,
+.btn-primary,
+.pagination > .active > a, .pagination > .active > span,
+.pagination > .active > a:hover, .pagination > .active > span:hover,
+.pagination > .active > a:focus, .pagination > .active > span:focus,
+ul.i-list.medium.bordered .icon,
+a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active,
+.feature-box .icon.filled,
+html .cta.with-full-borders-primary,
+.clients-wrap .owl-carousel .owl-item figure:hover,
+.btn.btn-outline-primary,
+.btn.btn-outline-primary:hover,
+.feature-box .icon.filled.medium,
+testimonial-two,
+.testimonial-two .owl-carousel .owl-dots .owl-dot.active span, 
+.testimonial-two .owl-carousel .owl-dots .owl-dot:hover span,
+.testimonial-four blockquote:hover,
+.exp-separator,
+.testimonial-two{
+   border-color: #7cbf34;
+}
+
+html .cta.featured.featured-primary,
+.left-top-br:before,
+.right-top-br:before,
+.call-to-action.top-bordered,
+.cbp-l-filters-alignCenter .cbp-filter-counter:after,
+.cbp-l-filters-buttonCenter .cbp-filter-counter:after,
+.top-bar.tobbar-clered,
+sup.new-badge:before,
+.feature-box[class*="feature-box-secundary-"] .v-icon:after,
+.testimonials.testimonials-primary-color li.testimonial.has-cite .testimonial-text::after {
+   border-top-color: #7cbf34;
+}
+
+.feature-box[class*="feature-box-secundary-"] .v-icon:after,
+.title-highlight-inner,
+.call-to-action.left-bordered, 
+.custom-timeline .custom-timeline-box:after,
+.cta.pompis-style h3{
+   border-left-color: #7cbf34;
+}
+
+.testimonial-four blockquote:hover::after{
+   border-right-color: #7cbf34;
+}
+
+section.fx--y aside.guide .cover,
+.page-item.active .page-link,
+.progress-bar,
+.bg-primary,
+.progress-bar-primary,
+.btn-primary,
+.label-primary,
+.timeline_box:hover:before,
+.page-header.primary,
+.ion-icons li:hover,
+.bs-glyphicons li:hover,
+.fontawesome-icon-list .fa-hover a:hover,
+.cbp-l-grid-masonry-projects .cbp-l-caption-buttonLeft,
+.cbp-l-grid-masonry-projects .cbp-l-caption-buttonRight,
+.pagination > .active > a, .pagination > .active > span,
+.pagination > .active > a:hover, .pagination > .active > span:hover,
+.pagination > .active > a:focus, .pagination > .active > span:focus,
+.cbp-l-filters-alignCenter .cbp-filter-counter,
+.cbp-l-filters-buttonCenter .cbp-filter-counter,
+.cbp-l-caption-buttonLeft, .cbp-l-caption-buttonRight,
+.main-color .xsocial-icons a:hover,
+sup.new-badge,
+.xspecial-heading.v2:after,
+.testimonials-tab .nav.nav-justified > li > a > .quote,
+.btn.accent,
+.v-list.v3 li > i,
+.btn-primary,
+.footer.footer-2 .title:after,
+.testimonial-two .owl-carousel .owl-dots .owl-dot.active span:before, 
+.testimonial-two .owl-carousel .owl-dots .owl-dot:hover span:before,
+.tab-wrap .nav-tabs li .nav-link.active span:after,
+html #header .header-top.header-top-primary,
+.service-item-title:after{
+   background-color: #7cbf34;
+}
+
+.btn.btn-outline-primary:hover,
+.bg-primary {
+   background-color: #7cbf34 !important;
+}
+
+.blockquote-primary {
+   border-color: #7cbf34 !important;
+}
+
+.testimonials-tab .nav.nav-justified > li > a > img {
+   box-shadow: 0 0 0 5px #7cbf34;
+}
+
+html .cta.cta-primary,
+.team-member.v2 .member-info .share i.fa-share-alt,
+.team-member.v2 .member-info .share:hover i.fa-share-alt,
+.menu-label,
+ul.i-list.filled i.fa,
+.feature-box .icon.filled,
+ul.i-list.medium .icon,
+.page-header.page-header-primary,
+.feature-box .icon-square,
+.call-to-action-fw.call-to-action-primary,
+.main-color .xsocial-icons.xsocial-effected-bg a i:first-child,
+html .cta.cta-primary,
+.testimonials.testimonials-primary-color li.testimonial .testimonial-text,
+.fancy-list li:hover::before,
+.process-step .process-step-step .process-step-dot:after,
+.minimal-post.post-content-wrap .post-meta ul:after,
+.join-us-form:before,
+.v-counter .count-divider span,
+.lift-off{
+   background: #7cbf34;
+}
+
+
+.special-heading.word-underline span,
+.special-heading.word-underline-2 span,
+nav.xsearch-navbar.navbar-light .navbar-nav .active > .nav-link,
+.special-heading.underline span:after,
+.cbp-l-filters-alignCenter .cbp-filter-item.cbp-filter-item-active,
+.cbp-l-filters-buttonCenter .cbp-filter-item.cbp-filter-item-active,
+.tg-filter.tg-show-filter.tg-filter-active,
+.v-heading-v2 h2, .v-heading-v2 h3, .v-heading-v2 h4,
+.blog-item .read-more-button:hover,
+.testimonial-four blockquote:hover::after{
+   border-bottom-color: #7cbf34;
+}
+ 
+
+.process-step .process-step-step .process-step-stepnum,
+.timeline-movement .title,
+h1, h2, h3, h4, h5, h6,
+.l-navbar_s-left.l-navbar_t-dark,
+.logo-brand,
+.menuzord-tabs-nav > li > a,
+.btn-default,
+.panel-group .panel-heading a,
+.cbp-l-grid-agency-title, 
+.xblog-wrap .xblog-meta a,
+.xblog-large-info-meta-link,
+.xblog-large-info-title a,
+.xblog-medium-info-meta-link,
+.xblog-medium-info-title a,
+.xblog-info-title a,
+.ion-icons li:before,
+.bs-glyphicons .glyphicon,
+.fontawesome-icon-list .fa-hover a,
+.cbp-l-grid-masonry-projects-title,
+.cbp-l-grid-projects-title,
+.cbp-l-caption-title,
+.cbp-l-filters-alignCenter .cbp-filter-item.cbp-filter-item-active,
+.cbp-l-filters-buttonCenter .cbp-filter-item.cbp-filter-item-active,
+.cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active,
+ul.comments .comment-block .comment-by,
+.testimonial-meta .testimonial-name strong,
+.footer.footer-minimal a,
+.slide-container .list-group-item,
+ul.comments .comment-block .comment-by strong,
+.blog-list-title a,
+.platform-block-title,
+.sidebar .list-group-item > a,
+.progress-bars.v2 .progress-label {
+   color: #444;
+}
+
+span.dropcap3 {
+   background: #444;
+}
+
+hr {
+   margin-top: 20px;
+   margin-bottom: 20px;
+   border-top: none;
+   border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+   box-shadow: 0 1px 0 0 rgba(255,255,255,0.715) !important;
+}
+
+.col-md-border:not(:last-child) {
+   border-right: 1px solid #e4e4e4;
+}
+
+.col-md-border + .col-md-border {
+   border-left: 1px solid #e2e2e2;
+   margin-left: -1px;
+}
+
+
+.e-custom-heading {
+   display: block;
+   font-family: "Droid Serif", Georgia, Times, serif !important;
+   font-weight: normal;
+   font-style: italic;
+   float: none;
+   letter-spacing: 0;
+}
+
+
+.c-tab-1-body-item,
+.c-tab-1-nav-link,
+.form-control,
+.pager li > a, .pager li > span,
+.pagination > li > a, .pagination > li > span,
+.btn-default,
+.xtestimonial .xtestimonial-content,
+.platform-block,
+.feature-box.boxed,
+.call-to-action,
+.xblog.xblog-type-4 .xblog-info:first-child {
+   border-color: #eaeaea;
+}
+
+.special-heading.line span:before, .special-heading.line span:after,
+.top-bar,
+.special-heading.word-underline .special-heading-inner,
+.panel-group .panel,
+.accordion.accordion-default .panel-default,
+.xblog.xblog-type-5.xblog-list article.xblog-item:not(:last-child),
+.b-bordered {
+   border-bottom-color: #eaeaea;
+}
+
+.special-heading.line span:before, .special-heading.line span:after,
+.footer.footer-minimal,
+.t-bordered {
+   border-top-color: #eaeaea;
+}
+
+.col-border + .col-border {
+   border-left-color: #eaeaea;
+}
+
+
+
+.main-color .feature-box.boxed,
+.main-color .call-to-action,
+.alternate-color,
+.page-header {
+   background-color: #f7f7f7;
+   background-color: #f6f9fc;
+   background-color: #fafafa;
+   background-color: #f7f7f7;
+   /*background: #f3f3f3 url(../../img/core/bg.png) center top repeat;*/
+}
+
+
+.alternate-color .feature-box.boxed,
+.alternate-color .form-control,
+.alternate-color .call-to-action,
+.main-color {
+   background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6,
+.feature-box .title {
+   text-transform: inherit;
+}
+
+b, strong {
+   font-weight: 600;
+}
+
+
+.v-heading-v2 span,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus,
+.widget .tagcloud a:hover,
+.widget ul.wp-tag-cloud li:hover > a,
+.widget.v-photo-stream-widget li,
+.v-bg-stylish.v-bg-stylish-v10,
+.v-bg-stylish-v10.v-full-width-text:after,
+.v-parallax .v-bg-overlay.overlay-colored,
+.recent-post figure,
+header div.search .btn-primary:hover,
+header div.search .btn-primary,
+header ul.nav-pills > li > a:hover,
+.portfolio-grid li,
+.feature-box-icon:hover,
+.sf-hover .feature-box-icon,
+.feature-box[class*="feature-box-secundary-"] .feature-box-icon,
+.sf-hover .feature-box-line,
+.pricing-column.highlight h3,
+span.highlighted,
+span.dropcap4,
+.progress-bar-primary,
+.v-process-steps .feature-box-icon:hover,
+#header .header-nav-main nav > ul > li.dropdown-mega.dropdown-mega-shop .cart-items,
+.express-box,
+.express-box:before,
+.express-box .express-box-inner:before,
+.horizontal-break-two{
+   background-color: #7cbf34;
+}
+
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4,
+.h5, .h6, h1 a,
+h2 a, h3 a,
+h4 a, h5 a, h6 a,
+.h1 a, .h2 a, .h3 a,
+.h4 a, .h5 a,
+.h6 a, blockquote,
+.srv-container .srv-name a,
+.srv-container .srv-name,
+.tab-wrap .nav-tabs .nav-link.active{
+   color: #333;
+}
+
+div.base-color h3,
+div.base-color h4,
+div.base-color h5,
+div.base-color h6,
+div.base-color {
+   color: #333 !important;
+}
+
+.post-wrap.v4 .post-content-wrap .post-title,
+.platform-block-title,
+.post-wrap.v5 .post-content-wrap .post-title,
+.minimal-post.post-content-wrap .post-title,
+.p-title h4, .p-title h3,
+h1, h2, h3,
+.smart-forms .form-header h4,
+.smart-forms .header-primary h4,
+.testimonials.testimonials-fw .testimonial-text p,
+.section-title,
+.section-title strong,
+.srv-container .srv-name a {
+   font-family: 'MuseoRegular', sans-serif;
+   font-weight: 300;
+}
+
+.service-item-title,
+span.dropcap1, span.dropcap2, span.dropcap3, span.dropcap4,
+.portfolio-item-title,
+.process-step .process-step-step .process-step-stepnum,
+.team-member .member-name .name,
+.feature-box h3,
+.title-highlight .title-text,
+ul.i-list .icon-content .title,
+.feature-box[class*="feature-box-secundary-"] h3,
+.stories_wrapper .testimonial_name,
+.feature-box-core-title,
+.modal-title,
+.xcircle-chart-wrap .xcircle-chart-title{
+   font-family: MuseoRegular;
+   font-weight: 500;
+}
+
+.smart-forms .select,
+.smart-forms .gui-input,
+.smart-forms .gui-textarea,
+.smart-forms .select > select,
+.smart-forms .select-multiple select,
+.smart-wrap,
+html .cta.cta-dark h3,
+.post-content-wrap .post-title,
+.smart-forms .form-header h4,
+.btn,
+.body-font,
+body,
+aside .heading .title,
+ul.nav-shortcodes label,
+.footer.footer-2 .title,
+.btn {
+   font-family: 'Hind', sans-serif;
+}
+
+
+footer,
+.sidebar-widget-inner,
+.recent-posts-list li .recent-post-details .blog-item-details,
+#header .header-top p, 
+a.read-more,
+.platform-block-steps a,
+footer .footer-contact-info p,
+.footer.footer-2 strong,
+.entry-c,
+.footer.stylelamas address,
+.footer.stylelamas p,
+.footer.stylelamas a,
+ul.nav-shortcodes a,
+.footer.footer-2 a,
+.spost .entry-title h4,
+.mpost .entry-title h4,
+.tab-wrap p,
+.accordion p{
+   font-size: 14px; 
+}

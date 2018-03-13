@@ -1,12 +1,40 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<?php
+if(!isset($_session)){
+    session_start();
+}
+include_once 'backend/user_auth.php';
+$con = mysqli_connect(HOST, USER, PASS, DB) or die('Connection to database failed' . mysqli_error($con));
+
+$user = new User();
+if ($user->session())
+{
+    header("location:dashboard.php");
+}
+
+$user = new User();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $login = $user->login($_REQUEST['email'],$_REQUEST['password'],$con);
+    if($login){
+
+        header("location:dashboard.php");
+    }
+    else
+    {
+        echo "Login Failed!";
+    }
+}
+?>
+
+<!DOCTYPE html>
 
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title>FARMZ | Welcome </title>
+   <title>FARMZ | Login</title>
+   <meta name="keywords" content="FARMS agronomy" />
    <meta name="description" content="FARMZ">
-   <meta name="author" content="raspatech.com">
+   <meta name="author" content="Team Entwickler">
    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -31,6 +59,7 @@
 
    <!-- Theme CSS -->
    <link href="css/main.css" rel="stylesheet" />
+   <link href="css/smart-forms.css" rel="stylesheet" />
    <link href="css/main-shortcodes.css" rel="stylesheet" />
    <link href="css/header.css" rel="stylesheet" />
    <link href="css/form-element.css" rel="stylesheet" />
@@ -58,7 +87,7 @@
                      <div class="header-row">
                         <div class="header-logo">
                            <a href="index.html" style="font-size: 25px;font-weight: 500;">
-                              <img alt="Farmz logo" width="108" height="72" src="img/logo_1.png">
+                               <img alt="Farm Anywhere" width="108" height="72" src="img/logo_1.png">
                               FARMZ
                            </a>
                         </div>
@@ -71,13 +100,13 @@
                               <nav class="collapse">
                                  <ul class="nav nav-pills" id="mainNav">
                                     <li class="dropdown">
-                                       <a class="dropdown-item dropdown-toggle" href="index.html">Who we are ? </a>
+                                       <a class="dropdown-item dropdown-toggle" href="index.html">Who we are </a>
                                     </li>
                                     <li class="dropdown">
                                        <a class="dropdown-item dropdown-toggle" href="index.html">Contact </a>
                                     </li>
                                     <li class="dropdown">
-                                       <a class="dropdown-item dropdown-toggle" href="login.php"> Login </a>
+                                       <a class="dropdown-item dropdown-toggle" href="register.php"> Sign Up </a>
                                     </li>
                                  </ul>
                               </nav>
@@ -97,122 +126,97 @@
 
       <div class="page">
          <div class="page-inner p-none">
-            <div class="v-page-heading v-fancy-heading light-style v-fancy-image v-fancy-top-header marketing-promo">
-               <div class="container z-index-1">
-                  <div class="row">
-                     <div class="col-sm-12 text-center text-white">
-                        <h3 class="section-title body-font fs-65 lh-72 fw-7">
-                           With Farmz everyday is <br />
-                           good day to be off the Farm.
-                           <h2>Join the community</h2>
-                        </h3>
-                        <!-- <p class="section-sub-title fs-24 o-9">We’re here to help you manage your business.</p> -->
-
-                        <a href="register.php" class="btn btn-primary btn-md">Sign Up Now</a>
-                     </div>
-                  </div>
-
-                 <!--  <div class="exp-separator center-separator">
-                     <div class="exp-separator-inner">
-                     </div>
-                  </div>
-
-                  <div class="row">
-                     <div class="col-md-10 offset-md-1 counters">
-
-                        <div class="row">
-
-                           <div class="col-md-4 col-sm-6">
-                              <div class="counter text-white">
-                                 <strong class="fs-42 text-white" data-to="48.500" data-plugin-options="{&quot;decimals&quot;: 3}">48.500</strong> <i class="icon-users fs-40 ml-5"></i>
-                                 <span class="fs-20">Happy Farmers</span>
-                              </div>
-                           </div>
-
-                           <div class="col-md-4 col-sm-6">
-                              <div class="counter text-white">
-                                 <div class="clearfix">
-                                    <i class="icon-facebook fs-40"></i> <strong class="fs-42 text-white" data-to="7500">7500</strong><span class="counter-append lh-42">k</span>
-                                 </div>
-                                 <span class="fs-20">Facebook Likes</span>
-                              </div>
-                           </div>
-
-                           <div class="col-md-4 col-sm-6">
-                              <div class="counter text-white">
-                                 <strong class="fs-42 text-white" data-to="105.49" data-plugin-options="{&quot;decimals&quot;: 2}">105.49</strong> <span class="counter-append lh-42">$</span>
-                                 <span class="fs-20">Extremely Cheap</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div> -->
-               </div>
-            </div>
+            
 
             <section class="section-primary alternate-color b-bordered">
-               <div class="container">
+                    <div id="divId">
 
-                  <div class="row">
-                     <div class="col-sm-4">
-                        <a class="feature-box-core" href="#">
-                           <div class="row">
-                              <img class="feature-box-core-icon" src="img/icons/html5-icon-large.png">
+  
+                            <title> Smart Forms - Login </title>
+                          <meta charset="utf-8">
+                          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          
+                          <!--<link rel="stylesheet" type="text/css"  href="css/smart-forms.css">
+                          <link rel="stylesheet" type="text/css"  href="css/font-awesome.min.css">-->
+                          
+                      
+                          <!--[if lte IE 9]>
+                              <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>    
+                              <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+                          <![endif]-->    
+                          
+                          <!--[if lte IE 8]>
+                              <link type="text/css" rel="stylesheet" href="css/smart-forms-ie8.css">
+                          <![endif]-->
+                             
+                      
+                      
+                      
+                      
+                          <div class="smart-wrap">
+                              <div class="smart-forms smart-container wrap-3" style="margin: 0 auto !important;">
+                              
+                                  <div class="form-header header-primary">
+                                      <h4><i class="fa fa-sign-in"></i>Login</h4>
+                                </div><!-- end .form-header section -->
+                                  
+                                  <form method="post" action=" " id="contact">
+                                      <div class="form-body">
+                                      
+                                          <div class="spacer-b30">
+                                              <div class="tagline"><span>Sign in</span></div><!-- .tagline -->
+                                          </div>                 
+                                      
+                                          <!--<div class="section">
+                                          <a href="#" class="button btn-social facebook span-left"> <span><i class="fa fa-facebook"></i></span> Facebook </a>
+                                          <a href="#" class="button btn-social twitter span-left">  <span><i class="fa fa-twitter"></i></span> Twitter </a>
+                                          <a href="#" class="button btn-social googleplus span-left"> <span><i class="fa fa-google-plus"></i></span> Google+ </a>
+                                          </div>
+                                          <div class="spacer-t30 spacer-b30">
+                                              <div class="tagline"><span> OR  Login </span></div>
+                                          </div>
+                                          <!-- end section -->
 
-                              <div class="feature-box-core-detail">
-                                 <h4 class="feature-box-core-title">
-                                    Creativity
-                                 </h4>
-                                 <p class="feature-box-core-category" href="#">
-                                    E-Commerce
-                                 </p>
-                                 <p class="feature-box-core-text">
-                                    Start creating beautiful websites purchase express today.
-                                 </p>
-                              </div>
-                           </div>
-                        </a>
-                     </div>
-                     <div class="col-sm-4">
-                        <a class="feature-box-core" href="#">
-                           <div class="row">
-                              <img class="feature-box-core-icon" src="img/icons/silverlight-icon-large.png">
 
-                              <div class="feature-box-core-detail">
-                                 <h4 class="feature-box-core-title">
-                                    Beauty
-                                 </h4>
-                                 <p class="feature-box-core-category" href="#">
-                                    E-Commerce
-                                 </p>
-                                 <p class="feature-box-core-text">
-                                    Start creating beautiful websites purchase express today.
-                                 </p>
-                              </div>
-                           </div>
-                        </a>
-                     </div>
-                     <div class="col-sm-4">
-                        <a class="feature-box-core" href="#">
-                           <div class="row">
-                              <img class="feature-box-core-icon" src="img/icons/header_icon_control.png">
-
-                              <div class="feature-box-core-detail">
-                                 <h4 class="feature-box-core-title">
-                                    Friendly
-                                 </h4>
-                                 <p class="feature-box-core-category" href="#">
-                                    E-Commerce
-                                 </p>
-                                 <p class="feature-box-core-text">
-                                    Start creating beautiful websites purchase express today.
-                                 </p>
-                              </div>
-                           </div>
-                        </a>
-                     </div>
-                  </div>
-               </div>
+                                          <div class="section">
+                                              <label class="field prepend-icon">
+                                                  <input name="email" id="email" class="gui-input" placeholder="Enter email" type="email" required>
+                                                  <span class="field-icon"><i class="fa fa-user"></i></span>  
+                                              </label>
+                                          </div><!-- end section -->                    
+                                          
+                                          <div class="section">
+                                              <label class="field prepend-icon">
+                                                  <input name="password" id="password" class="gui-input" placeholder="Enter password" type="password" required>
+                                                  <span class="field-icon"><i class="fa fa-lock"></i></span>  
+                                              </label>
+                                          </div><!-- end section -->  
+                                          
+                                          <div class="section">
+                                              <label class="switch block">
+                                                  <input name="remember" id="remember" checked="" type="checkbox">
+                                                  <span class="switch-label" for="remember" data-on="YES" data-off="NO"></span> 
+                                                  <span> Keep me logged in ?</span>
+                                              </label>
+                                          </div><!-- end section -->                                                           
+                                          
+                                      </div><!-- end .form-body section -->
+                                      <div class="form-footer">
+                                          <span><input type="submit" name="submit" value="Sign In" class="button btn-primary" /></span>
+                                          <div>
+                                              <p>Join the community of users Register <a href="register.php"> here </a></p>
+                                          </div></span>
+                                      </div><!-- end .form-footer section -->
+                                  </form>
+                                  
+                              </div><!-- end .smart-forms section -->
+                          </div><!-- end .smart-wrap section -->
+                          
+                          <div></div><!-- end section -->
+                      
+                      
+                      
+                      </div>
             </section>
 
             

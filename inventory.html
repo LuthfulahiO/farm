@@ -280,18 +280,18 @@
 				<div class="form-row">
 
 					<div class="form-group col-md-4">
-						<label for="inputState" class="col-form-label">Animal</label>
-						<select id="inputState" class="form-control">
+						<label for="inputAnimalName" class="col-form-label">Animal</label>
+						<select id="inputAnimalName" class="form-control" name="inputAnimalName">
 							<option>Choose</option>
 							<option>1</option>
 							<option>2</option>
 						</select>
 					</div>
 					<div class="form-group col-md-6">
-						<label for="inputCity" class="col-form-label">Quantity</label>
-						<input type="text" class="form-control" placeholder="Quantity" id="inputCity">
+						<label for="inputAnimalQty" class="col-form-label">Quantity</label>
+						<input type="text" class="form-control" placeholder="Quantity" id="inputAnimalQty">
 					</div>
-					<button type="submit" class="btn btn-primary">Add</button>
+					<button id="addAnimal" onclick="addAnimal(this.id)" type="submit" class="btn btn-primary">Add</button>
 				</div>
 
 				<div class="form-row">
@@ -304,7 +304,7 @@
 						</select>
 					</div>
 					<div class="form-group col-md-6">
-						<label for="inputCity" class="col-form-label">Quantity</label>
+						<label for="inputQuantity" class="col-form-label">Quantity</label>
 						<input type="text" class="form-control" placeholder="Quantity" id="inputQuantity">
 					</div>
 					<button id="btnAddPlant" type="submit" class="btn btn-primary" onclick="addPlant(this.id)">Add</button>
@@ -323,63 +323,59 @@
 </div>
 <!-- END: .app-wrap -->
 <script>
-    function loadingBtn(btnId,textVal) {
+    function loadingBtn(btnId,textVal,isLoading) {
         var button = $("body").find('#' + btnId);
-        //Animate Btn to loading
-        button.html('<i class="fa fa-circle-o-notch fa-spin" style="color: #ffffff;"></i> '+ textVal);
-        button.prop('disabled', true); // disable button
+        if(isLoading){
+            //Animate Btn to loading
+            button.html('<i class="fa fa-circle-o-notch fa-spin" style="color: #ffffff;"></i> '+ textVal);
+            button.prop('disabled', true); // disable button
+		}else{
+            button.html(textVal);
+            button.prop('disabled', false); // enable button
+		}
     }
 
     function addPlant(btnId){
         var plantName            = document.getElementById('inputPlant').value;
         var plantQuantity        = document.getElementById('inputQuantity').value;
+        //0 - plant 1- animal
         var data = {
             plantName   : 	plantName,
 			quantity	:	plantQuantity,
-			plant	 	:   1
+			type	 	:   0
 		};
-        loadingBtn(btnId,'Adding Plant');
-        //0 - plant 1- animal
-        saveInventory(data);
+        loadingBtn(btnId,'Adding Plant',1);
+        setTimeout( function(){
+            saveInventory(data,btnId)
+        },1000);
     }
-    function saveInventory(formData) {
+
+    function addAnimal(btnId){
+        var animalName       = document.getElementById('inputAnimalName').value;
+        var animalQty        = document.getElementById('inputAnimalQty').value;
+        //0 - plant 1- animal
+        var data = {
+            animalName   : 	animalName,
+            animalQty 	 :	animalQty,
+            type	 	 :  1
+        };
+        loadingBtn(btnId,'Adding Animal',1);
+        setTimeout( function(){
+            saveInventory(data,btnId)
+        },1000);
+    }
+
+    function saveInventory(formData,btn) {
         $.ajax({
-            url: "saveInventory.php", //You can replace this with MVC/WebAPI/PHP/Java etc
+            url: "ajax/saveInventory.php", //You can replace this with MVC/WebAPI/PHP/Java etc
             method: "POST",
             tryCount : 0,
             retryLimit : 3,
             data: formData,
             success: function (response) {
+                loadingBtn(btn,'Add',0);
                 response = response.replace(/^\s+|\s+$/g, "");
-                if(response=='1') {
-                    jQuery("#submit").html('Post Job');
-                    jQuery("#submit").prop('disabled', false); // enable button
-                    var g = document.getElementById("success");
-                    document.getElementById("feedback").style.display="none";
-                    document.getElementById("success").style.display="block";
-                    message = "Job Posted Successfully";
-                    $("#success").html(message);
-                    g.scrollIntoView();
-                    setTimeout('delayedRedirect()', 3000)
-                }
-                else if(response=='-2'){
-                    jQuery("#submit").html('Post Job');
-                    jQuery("#submit").prop('disabled', false); // enable button
-                    document.getElementById("success").style.display="none";
-                    document.getElementById("feedback").style.display="block";
-                    message = "Oops! Kindly check network connection before submitting";
-                    $("#feedback").html(message);
-                    window.scrollTo(0, top);
-                }
-                else{
-                    jQuery("#submit").html('Post Job');
-                    jQuery("#submit").prop('disabled', false); // enable button
-                    document.getElementById("success").style.display="none";
-                    document.getElementById("feedback").style.display="block";
-                    message = "Oops! Kindly fill all fields before submitting form";
-                    $("#feedback").html(message);
-                    window.scrollTo(0, top);
-                }
+                console.log(response);
             },
             error: function () {
                 this.tryCount++;
@@ -388,13 +384,6 @@
                     $.ajax(this);
                     return;
                 }
-                jQuery("#submit").html('Post Job');
-                jQuery("#submit").prop('disabled', false); // enable button
-                document.getElementById("success").style.display="none";
-                document.getElementById("feedback").style.display="block";
-                message = "Oops! Kindly check network connection before submitting";
-                $("#feedback").html(message);
-                window.scrollTo(0, top);
             }
         });
     }

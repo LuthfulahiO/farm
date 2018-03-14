@@ -1,30 +1,19 @@
 <!doctype html>
 <html lang="en">
+<?php
+    require_once "includes/initialize.php";
+?>
 <head>
-<<<<<<< HEAD
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name="description" content="A Farm Care Application" />
-		<meta name="keywords" content="Farmcare, Agricultural Inventory, Codefest, Farmz, Team Entwickler, Oseni Luthfulahi, Awwal Akanbi, Adeogun Oluwaseyi, Chuwkunonoso Okonji" />
-		<meta name="author" content="Team Entwickler" />
-		<!-- <link rel="shortcut icon" href="img/favicon.ico" /> -->
-		<title>FarmZ - INVENTORY</title>
-=======
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<meta name="description" content="Unify Admin Panel" />
-	<meta name="keywords" content="CRM, Admin, Dashboard, Bootstrap4, Sass, CSS3, HTML5, Responsive Dashboard, Responsive Admin Template, Admin Template, Best Admin Template, Bootstrap Template, Themeforest" />
-	<meta name="author" content="Bootstrap Gallery" />
-	<link rel="shortcut icon" href="img/favicon.ico" />
+	<meta name="description" content="A Farm Care Application" />
+	<meta name="keywords" content="Farmcare, Agricultural Inventory, Codefest, Farmz, Team Entwickler, Oseni Luthfulahi, Awwal Akanbi, Adeogun Oluwaseyi, Chuwkunonoso Okonji" />
+	<meta name="author" content="Team Entwickler" />
+	<!-- <link rel="shortcut icon" href="img/favicon.ico" /> -->
 	<title>FarmZ - INVENTORY</title>
->>>>>>> 094fee38fc64136cb676c7c59637266210c51b6e
-
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -81,18 +70,6 @@
 								<span class="user-name">Custom User</span>
 								<i class="icon-chevron-small-down"></i>
 							</a>
-<<<<<<< HEAD
-							<h6 class="location-name">San Francisco</h6>
-							<!-- <button class="btn btn-primary">Get My Location</button> -->
-						</div>
-						<!-- END .user-profile -->
-						<!-- BEGIN .side-nav -->
-						<nav class="side-nav">
-							<!-- BEGIN: side-nav-content -->
-							<ul class="unifyMenu" id="unifyMenu">
-								<li>
-									<a href="dashboard.html">
-=======
 							<div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
 								<ul class="user-settings-list">
 									<li>
@@ -152,63 +129,17 @@
 					<ul class="unifyMenu" id="unifyMenu">
 						<li>
 							<a href="dashboard2.html">
->>>>>>> 094fee38fc64136cb676c7c59637266210c51b6e
 										<span class="has-icon">
-											<i class="icon-laptop_windows"></i>
+											<i class="icon-flash-outline"></i>
 										</span>
-<<<<<<< HEAD
-										<span class="nav-title">DashBoard</span>
-									</a>
-								</li>
-								<li class="active selected">
-									<a href="inventory.html">
-=======
 								<span class="nav-title">DashBoard</span>
 							</a>
 						</li>
 						<li class="active selected">
 							<a href="news.html">
->>>>>>> 094fee38fc64136cb676c7c59637266210c51b6e
-										<span class="has-icon">
-											<i class="icon-chart-area-outline"></i>
-										</span>
-<<<<<<< HEAD
-										<span class="nav-title" title="Animals/Plants">Inventory</span>
-									</a>
-								</li>
-								<li>
-									<a href="todo.html">
 										<span class="has-icon">
 											<i class="icon-flash-outline"></i>
 										</span>
-										<span class="nav-title">Todo/Activities</span>
-									</a>
-								</li>
-								<li>
-									<a href="news.html">
-										<span class="has-icon">
-											<i class="icon-info-large-outline"></i>
-										</span>
-										<span class="nav-title">News Feed</span>
-									</a>
-								</li>
-								<!-- <li>
-									<a href="#" class="has-arrow" aria-expanded="false">
-										<span class="has-icon">
-											<i class="icon-adjust2"></i>
-										</span>
-										<span class="nav-title">Farm Services</span>
-									</a>
-									<ul aria-expanded="false">
-										<li>
-											<a href="dashboard2.html">Plants</a>
-										</li>
-										<li>
-											<a href="dashboard2.html">Animals</a>
-										</li>
-									</ul>
-								</li> -->
-=======
 								<span class="nav-title">News Feed</span>
 							</a>
 						</li>
@@ -234,7 +165,6 @@
 								<li>
 									<a href="dashboard2.html">Animals</a>
 								</li>
->>>>>>> 094fee38fc64136cb676c7c59637266210c51b6e
 							</ul>
 						</li>
 					</ul>
@@ -246,23 +176,6 @@
 		</aside>
 		<!-- END: .app-side -->
 
-<<<<<<< HEAD
-				<!-- BEGIN .app-main -->
-				<div class="app-main">
-					<!-- BEGIN .main-heading -->
-					<header class="main-heading">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-									<div class="page-icon">
-										<i class="icon-chart-area-outline"></i>
-									</div>
-									<div class="page-title">
-										<h5>Plants and Animal Inventory</h5>
-										<h6 class="sub-heading">Welcome!</h6>
-									</div>
-								</div>
-=======
 		<!-- BEGIN .app-main -->
 		<div class="app-main">
 			<!-- BEGIN .main-heading -->
@@ -276,7 +189,6 @@
 							<div class="page-title">
 								<h5>Plants and Animal Inventory</h5>
 								<h6 class="sub-heading">Welcome!</h6>
->>>>>>> 094fee38fc64136cb676c7c59637266210c51b6e
 							</div>
 						</div>
 					</div>
@@ -287,136 +199,52 @@
 			<div class="main-content">
 
 
-<<<<<<< HEAD
-						<!-- Row start -->
-						<div class="row gutters">
-							<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-								<div class="card">
-									<div class="card-header">Animals</div>
-									<div class="card-body">
-										<table class="table table-inverse m-0">
-											<thead>
-												<tr>
-													<th>#</th>
-													<th>Name</th>
-													<th>Quantity</th>
-													<!-- <th>Username</th> -->
-												</tr>
-											</thead>
-											<tbody id="animalSec">
-												<tr>
-													<th scope="row">1</th>
-													<td>Cow</td>
-													<td>67</td>
-													<!-- <td>@mdo</td> -->
-												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Sheep</td>
-													<td>89</td>
-													<!-- <td>@fat</td> -->
-												</tr>
-												<tr>
-													<th scope="row">3</th>
-													<td>Goat</td>
-													<td>45</td>
-													<!-- <td>@twitter</td> -->
-												</tr>
-											</tbody>
-										</table>
-
-									</div>
-								</div>
-							</div>
-							<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-								<div class="card">
-									<div class="card-header">Plants</div>
-									<div class="card-body">
-										<table class="table m-0">
-											<thead class="thead-inverse">
-												<tr>
-													<th>#</th>
-													<th>Palnt Name</th>
-													<th>Quantity</th>
-												</tr>
-											</thead>
-											<tbody id="plantSec">
-												<tr>
-													<th scope="row">1</th>
-													<td>Maize</td>
-													<td>15</td>
-													<!-- <td>@mdo</td> -->
-												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Cassave</td>
-													<td>100</td>
-													<!-- <td>@fat</td> -->
-												</tr>
-												<tr>
-													<th scope="row">3</th>
-													<td>Rice</td>
-													<td>1000</td>
-													<!-- <td>@twitter</td> -->
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Row end -->
-						<div class="form-row">
-
-							<div class="form-group col-md-4">
-								<label for="inputState" class="col-form-label">Animal</label>
-								<select id="inputState" class="form-control">
-									<option>Choose</option>
-									<option>1</option>
-									<option>2</option>
-								</select>
-							</div>
-							<div class="form-group col-md-6">
-								<label for="inputQuantity" class="col-form-label">Quantity</label>
-								<input type="number" class="form-control" placeholder="Quantity" id="inputQuantity">
-								<button  onclick="addAnimal()" class="btn btn-primary">Add</button>
-							</div>
-
-=======
 				<!-- Row start -->
 				<div class="row gutters">
+					<div class="col-md-12" id="alertDialog" style="display: none"></div>
+
 					<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 						<div class="card">
 							<div class="card-header">Animals</div>
 							<div class="card-body">
-								<table class="table table-inverse m-0">
-									<thead>
+								<table id="animalTable" class="table table-inverse m-0">
+									<thead id="animalTableHead">
+                                    <?php
+                                        $animalInventory = mysqli_query($database,"SELECT * FROM inventory WHERE type='Animal'");
+                                        if(mysqli_num_rows($animalInventory)):
+                                        ?>
 									<tr>
+
 										<th>#</th>
 										<th>Name</th>
 										<th>Quantity</th>
 										<!-- <th>Username</th> -->
 									</tr>
+                                    <?php endif; ?>
 									</thead>
 									<tbody>
-									<tr>
-										<th scope="row">1</th>
-										<td>Cow</td>
-										<td>67</td>
-										<!-- <td>@mdo</td> -->
-									</tr>
-									<tr>
-										<th scope="row">2</th>
-										<td>Sheep</td>
-										<td>89</td>
-										<!-- <td>@fat</td> -->
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td>Goat</td>
-										<td>45</td>
-										<!-- <td>@twitter</td> -->
-									</tr>
+									<?php
+                                        $animalInventory = mysqli_query($database,"SELECT * FROM inventory WHERE type='Animal'");
+                                        if(mysqli_num_rows($animalInventory)):
+                                            $i=0;
+                                            while ($row = mysqli_fetch_assoc($animalInventory)):
+                                                $i++;
+                                    ?>
+                                            <tr>
+                                                <th scope="row">
+                                                    <?php echo $i; ?>
+                                                </th>
+                                                <td>
+                                                    <?php echo $row['name']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row['quantity']; ?>
+                                                </td>
+                                            </tr>
+                                        <?php endwhile; ?>
+                                    <?php else: ?>
+                                            <div class="text-center" id="animalNoRecTxt"> No Record found</div>
+                                    <?php endif; ?>
 									</tbody>
 								</table>
 
@@ -427,60 +255,50 @@
 						<div class="card">
 							<div class="card-header">Plants</div>
 							<div class="card-body">
-								<table class="table m-0">
-									<thead class="thead-inverse">
-									<tr>
-										<th>#</th>
-										<th>Palnt Name</th>
-										<th>Quantity</th>
-									</tr>
+								<table class="table m-0" id="plantTable">
+									<thead  class="thead-inverse" id="plantTableHead">
+                                    <?php
+                                        $plantInventory = mysqli_query($database,"SELECT * FROM inventory WHERE type='Plant'");
+                                        if(mysqli_num_rows($plantInventory)):
+                                        ?>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Plant Name</th>
+                                            <th>Quantity</th>
+                                        </tr>
+                                    <?php endif; ?>
 									</thead>
 									<tbody>
-									<tr>
-										<th scope="row">1</th>
-										<td>Maize</td>
-										<td>15</td>
-										<!-- <td>@mdo</td> -->
-									</tr>
-									<tr>
-										<th scope="row">2</th>
-										<td>Cassava</td>
-										<td>100</td>
-										<!-- <td>@fat</td> -->
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td>Rice</td>
-										<td>1000</td>
-										<!-- <td>@twitter</td> -->
-									</tr>
+                                    <?php
+                                    if(mysqli_num_rows($plantInventory)):
+                                        $i=0;
+                                        while ($row = mysqli_fetch_assoc($plantInventory)):
+                                            $i++;
+                                            ?>
+                                            <tr>
+                                                <th scope="row">
+                                                    <?php echo $i; ?>
+                                                </th>
+                                                <td>
+                                                    <?php echo $row['name']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row['quantity']; ?>
+                                                </td>
+                                            </tr>
+                                        <?php endwhile; ?>
+                                    <?php else: ?>
+                                         <div class="text-center" id="plantNoRecTxt"> No Record found</div>
+                                    <?php endif; ?>
 									</tbody>
 								</table>
 							</div>
->>>>>>> 094fee38fc64136cb676c7c59637266210c51b6e
 						</div>
 					</div>
 				</div>
 				<!-- Row end -->
 				<div class="form-row">
 
-<<<<<<< HEAD
-							<div class="form-group col-md-4">
-								<label for="inputState" class="col-form-label">Plants</label>
-								<select id="inputStatee" class="form-control">
-									<option>Choose</option>
-									<option>1</option>
-									<option>2</option>
-								</select>
-							</div>
-							<div class="form-group col-md-6">
-								<label for="inputQ" class="col-form-label">Quantity</label>
-								<input type="number" class="form-control" placeholder="Quantity" id="inputQ">
-								<button type="submit" class="btn btn-primary">Add</button>
-							</div>
-
-						</div>
-=======
 					<div class="form-group col-md-4">
 						<label for="inputAnimalName" class="col-form-label">Animal</label>
 						<select id="inputAnimalName" class="form-control" name="inputAnimalName">
@@ -491,8 +309,7 @@
 					</div>
 					<div class="form-group col-md-6">
 						<label for="inputAnimalQty" class="col-form-label">Quantity</label>
-						<input type="text" class="form-control" placeholder="Quantity" id="inputAnimalQty">
->>>>>>> 094fee38fc64136cb676c7c59637266210c51b6e
+						<input type="number" class="form-control" placeholder="Quantity" id="inputAnimalQty">
 					</div>
 					<button id="addAnimal" onclick="addAnimal(this.id)" type="submit" class="btn btn-primary">Add</button>
 				</div>
@@ -508,7 +325,7 @@
 					</div>
 					<div class="form-group col-md-6">
 						<label for="inputQuantity" class="col-form-label">Quantity</label>
-						<input type="text" class="form-control" placeholder="Quantity" id="inputQuantity">
+						<input type="number" class="form-control" placeholder="Quantity" id="inputQuantity">
 					</div>
 					<button id="btnAddPlant" type="submit" class="btn btn-primary" onclick="addPlant(this.id)">Add</button>
 				</div>
@@ -541,11 +358,11 @@
     function addPlant(btnId){
         var plantName            = document.getElementById('inputPlant').value;
         var plantQuantity        = document.getElementById('inputQuantity').value;
-        //0 - plant 1- animal
+        //1 - plant 2- animal
         var data = {
             plantName   : 	plantName,
 			quantity	:	plantQuantity,
-			type	 	:   0
+			type	 	:   1
 		};
         loadingBtn(btnId,'Adding Plant',1);
         setTimeout( function(){
@@ -556,39 +373,102 @@
     function addAnimal(btnId){
         var animalName       = document.getElementById('inputAnimalName').value;
         var animalQty        = document.getElementById('inputAnimalQty').value;
-        //0 - plant 1- animal
+        //1 - plant 2- animal
         var data = {
             animalName   : 	animalName,
             animalQty 	 :	animalQty,
-            type	 	 :  1
+            type	 	 :  2
         };
         loadingBtn(btnId,'Adding Animal',1);
         setTimeout( function(){
-            saveInventory(data,btnId)
+            saveInventory(data,btnId,data.type);
         },1000);
     }
 
-    function saveInventory(formData,btn) {
+    function showAlertBox(message,alertType) {
+        var notificationBanner = $("#alertDialog");
+        notificationBanner.show();
+        var alertMsg;
+        if(alertType==='success') {
+            alertMsg = '<div class="alert alert-success text-center" >'+ message + '</div>';
+            notificationBanner.html(alertMsg);
+		}else if(alertType==='failure') {
+            alertMsg = '<div class="alert alert-danger text-center" >'+ message + '</div>';
+            notificationBanner.html(alertMsg);
+		}
+    }
+
+    function saveInventory(formData,btn,type) {
+        var inventoryType = (type)===2  ? "Animal" : "Plant";
         $.ajax({
-            url: "ajax/saveInventory.php", //You can replace this with MVC/WebAPI/PHP/Java etc
+            url: "ajax/saveInventory.php",
             method: "POST",
             tryCount : 0,
             retryLimit : 3,
             data: formData,
             success: function (response) {
-                loadingBtn(btn,'Add',0);
-                response = response.replace(/^\s+|\s+$/g, "");
-                console.log(response);
+                loadingBtn(btn,'Add',0);  //Enable Btn
+                response = parseInt(response.replace(/^\s+|\s+$/g, ""));
+                if(response===1){
+                    showAlertBox(inventoryType+' added successfully','success');
+                    addToUI(formData,type);
+				}else{
+                    showAlertBox('Error adding '+inventoryType,'failure');
+				}
             },
             error: function () {
                 this.tryCount++;
                 if (this.tryCount <= this.retryLimit) {
                     //try again
                     $.ajax(this);
-                    return;
+                    return ;
                 }
+                loadingBtn(btn,'Add',0);  //Enable Btn
+                showAlertBox('Error adding'+inventoryType,'failure');
             }
         });
+    }
+
+    function addToUI(data,type) {
+        //1 - plant 2- animal
+		var table ; var newRowContent; var numberOfRows ; var tableHeadVal;
+		if(type===2){
+             table = $("#animalTable").find("tbody");
+             //get number of table rows
+             numberOfRows= table.children().length+1;
+			 newRowContent = '<tr>' +
+                 '<th scope="row">'+numberOfRows+'</th>' +
+                 '<td>'+data.animalName+'</td>' +
+                 '<td>'+data.animalQty+'</td></tr>';
+            if(numberOfRows===1){
+                $("#animalNoRecTxt").hide();
+                tableHeadVal = '<tr>' +
+                    '<th>#</th>' +
+                    '<th>Name</th>' +
+                    '<th>Quantity</th>' +
+                    '</tr>';
+                $("#animalTableHead").html(tableHeadVal);
+            }
+             table.append(newRowContent);
+		}else{
+            table = $("#plantTable").find("tbody");
+            //get number of table rows
+            numberOfRows= table.children().length+1;
+            newRowContent = '<tr>' +
+                '<th scope="row">'+numberOfRows+'</th>' +
+                '<td>'+data.plantName+'</td>' +
+                '<td>'+data.quantity+'</td></tr>';
+            if(numberOfRows==1){
+                $("#plantNoRecTxt").hide();
+                tableHeadVal = '<tr>' +
+                    '<th>#</th>' +
+                    '<th>Plant Name</th>' +
+                    '<th>Quantity</th>' +
+                    '</tr>';
+                $("#plantTableHead").html(tableHeadVal);
+            }
+            table.append(newRowContent);
+		}
     }
 </script>
 
@@ -612,26 +492,7 @@
 <script src="vendor/sparkline/sparkline-retina.js"></script>
 <script src="vendor/sparkline/custom-sparkline.js"></script>
 
-<<<<<<< HEAD
-		<!-- Common JS -->
-		<script src="js/common.js"></script>
-		<!-- <script type="text/javascript">
-			function addAnimal() {
-				let y = $('#inputQuantity').val();
-				let x = $('#inputState').val();
-				let z = $('#animalSec').lastChild();
-				$('#animalSec').append(`
-						<th scope="row">2</th>
-						<td>${y}</td>
-						<td>${x}</td>
-					`)
-				console.log(z);
-			}
-		</script> -->
-	</body>
-=======
 <!-- Common JS -->
 <script src="js/common.js"></script>
 </body>
->>>>>>> 094fee38fc64136cb676c7c59637266210c51b6e
 </html>

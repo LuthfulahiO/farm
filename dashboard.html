@@ -204,7 +204,7 @@
 					<div class="main-content">
 							<div class="gutters row">
 								<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-									<button class="btn btn-primary">Get My Location <i class="icon-target2"></i></button>
+									<button onclick="getLocation()" class="btn btn-primary">Get My Location <i class="icon-target2"></i></button>
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 									<button class="btn btn-primary">Edit My Profile <i class="icon-gears"></i></button>
@@ -259,12 +259,12 @@
 			<!-- END: .app-container -->
 			<!-- BEGIN .main-footer -->
 			<footer class="main-footer fixed-btm">
+				<p>Address: <div id="address"></div></p>
 				Team Entwickler for Code Fest
 			</footer>
 			<!-- END: .main-footer -->
 		</div>
 		<!-- END: .app-wrap -->
-
 		<!-- jQuery first, then Tether, then other JS. -->
 		<script src="js/jquery.js"></script>
 		<script src="js/tether.min.js"></script>
@@ -287,5 +287,45 @@
 
 		<!-- Common JS -->
 		<script src="js/common.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			function getLocation() {
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        geo_loc = processGeolocationResult(position);
+                        currLatLong = geo_loc.split(",");
+                        initializeCurrent(currLatLong[0], currLatLong[1]);
+                    });
+                }else
+                   alert("Browser does not support Geo location");
+            }
+
+			//Get geo location result
+                function processGeolocationResult(position) {
+                    html5Lat = position.coords.latitude; //Get latitude
+                    html5Lon = position.coords.longitude; //Get longitude
+                    html5TimeStamp = position.timestamp; //Get timestamp
+                    html5Accuracy = position.coords.accuracy; //Get accuracy in meters
+                    return (html5Lat).toFixed(8) + ", " + (html5Lon).toFixed(8);
+                }
+
+                //Check value is present or not & call google api function
+				function initializeCurrent(latcurr, longcurr) {
+					console.log(latcurr + "-- ######## --" + longcurr);
+					var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=6.6194,3.5105&key=AIzaSyCtaAySLoRcPoiR-UF2DgkL0pNB3Cmhsrg';
+                    $.ajax({
+						url:	url,
+						success : function (response) {
+						    if(response.status==='OK'){
+						        response = JSON.parse(JSON.stringify(response['results'][5]));
+                                console.log(response);
+							}
+                        },
+						error	: function (response) {}
+					});
+				}
+
+
+		</script>
+
 	</body>
 </html>

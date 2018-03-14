@@ -388,14 +388,22 @@
     function showAlertBox(message,alertType) {
         var notificationBanner = $("#alertDialog");
         notificationBanner.show();
-        var alertMsg;
+        var alertMsg; var jsScript;
         if(alertType==='success') {
             alertMsg = '<div class="alert alert-success text-center" >'+ message + '</div>';
             notificationBanner.html(alertMsg);
+            removeNotification(notificationBanner);
 		}else if(alertType==='failure') {
             alertMsg = '<div class="alert alert-danger text-center" >'+ message + '</div>';
             notificationBanner.html(alertMsg);
+            removeNotification(notificationBanner);
 		}
+    }
+
+    function removeNotification(notification) {
+        window.setInterval(function () {
+            notification.fadeOut().delay(2000);
+        },5000)
     }
 
     function saveInventory(formData,btn,type) {

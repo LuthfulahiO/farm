@@ -14,7 +14,7 @@ class ClearApi {
         //put your API Key and Secret in these two variables.
         $this->api_key      = "9Pmt5nnNT5fb1METsXry8eeEI1pkG8lD";
         $this->api_secret   = "1GibMh2kBCYLrF75";
-        $this->access_token = "o4TxUvD2NUpIVq2Lq3XDgwZFnUIT";
+        $this->access_token = $this->generateAuthToken();
         $this->host         = "https://api.awhere.com";
     }
 
@@ -30,9 +30,11 @@ class ClearApi {
 
         $result = curl_exec($ch);
         $result = json_decode($result);
-        var_dump($result);
-        $this->access_token =$result->access_token;
-        //return $result->access_token;
+        if(isset($result->access_token)){
+            $this->access_token =$result->access_token;
+            return $result->access_token;
+        }
+        return NULL;
     }
 
     function getSingleField($fieldId){
@@ -112,5 +114,21 @@ class ClearApi {
         curl_close($curl);
         return $result;
     }
+
+    function getWeatherForecastForToday($latitude,$longitude){
+        $currentDate = date("Y-m-d",time());
+        $response = $this->createCurl('GET',[
+            "conditionsType" => "standard"
+        ],
+            "/v2/weather/locations/{$latitude},{$longitude}/forecasts/{$currentDate}/"
+        );
+        if(isset($response->statusCode)){
+            if($response->statusCode ==401)
+                $this->generateAuthToken();
+            $this->getWeatherForecastForToday($latitude,$longitude);
+        }
+            return $response;
+    }
 }
+$weatherApi = new ClearApi();
 

@@ -1,5 +1,8 @@
 <!doctype html>
 <html lang="en">
+<?php
+require_once "includes/initialize.php";
+?>
 <head>
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
@@ -26,6 +29,96 @@
 
 	</head>
 	<body>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        function getLocation() {
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    geo_loc = processGeolocationResult(position);
+                    currLatLong = geo_loc.split(",");
+                    initializeCurrent(currLatLong[0], currLatLong[1]);
+                });
+            }else
+                alert("Browser does not support Geo location");
+        }
+
+        //Get geo location result
+        function processGeolocationResult(position) {
+            html5Lat = position.coords.latitude; //Get latitude
+            html5Lon = position.coords.longitude; //Get longitude
+            html5TimeStamp = position.timestamp; //Get timestamp
+            html5Accuracy = position.coords.accuracy; //Get accuracy in meters
+            return (html5Lat).toFixed(8) + ", " + (html5Lon).toFixed(8);
+        }
+
+        //Check value is present or not & call google api function
+        function initializeCurrent(latcurr, longcurr) {
+            var geoLoc ={
+                lat 	:	latcurr,
+                long	:	longcurr
+            };
+            var apiKey = 'AIzaSyCtaAySLoRcPoiR-UF2DgkL0pNB3Cmhsrg';
+            var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+latcurr+','+longcurr+'&key='+apiKey;
+            $.ajax({
+                url:	url,
+                success : function (response) {
+                    if(response.status==='OK' && (response['results'])){
+                        var address = processUserLocation(response);
+                        //Add address gotten from gmap api to data
+                        geoLoc.address = address ;
+                        getWeather(geoLoc,address);
+                    }
+                },
+                error	: function (response) {}
+            });
+        }
+        function getWeather(location,gMapApiAddress) {
+            //Use Data to getCurrent Weather
+            $.ajax({
+                method	: 	"POST",
+                url		:	'ajax/getLocationWeather.php',
+                data	:	location,
+                success : function (response) {
+                    response = JSON.parse(response);
+                    var year  			= response.date.length>4 ? response.date.substr(0,4) : currentDate.getFullYear();
+                    var forecastData 	= response.forecast[0];
+                    var conditionText	= forecastData.conditionsText;
+                    var weatherData = {
+                        condition	:	conditionText,
+                        year		:	year,
+                        temp		:	parseInt(forecastData.temperatures.value),
+                        location	:	gMapApiAddress
+                    };
+                    updateWeatherUI(weatherData);
+                },
+                error	: function (response) {}
+            });
+        }
+
+        function processUserLocation(response) {
+            //Map Api returns nearby location choose on randomly and set as string location
+            //Google Maps Api returns more than one address ,fetch one index at random
+            var maxIndex    = response['results'].length;
+            var randomIndex = Math.floor(Math.random() * maxIndex); // number between 0 and 8
+            //Pick last two address ie Lagos,Nigeria or Oyo,Nigeria
+            var result      = response['results'][randomIndex]['address_components'];
+            return (result.length === 1) ? result[0].long_name : result[result.length - 2].long_name + ', ' + result[result.length - 1].long_name;
+        }
+
+        function updateWeatherUI(data) {
+            var condition = data.condition;
+            condition	  = condition.split(",");
+            //Pick one of the conditions
+            var randomIndex = Math.floor(Math.random() * condition.length); // number between 0 and length
+            condition	  = condition[randomIndex];
+            //Update text on screen to new values
+            $("#weatherConditionYear").text(data.year);
+            $("#weatherConditionsText").text(condition);
+            $("#weatherConditionDegree").text(data.temp+'\u00b0');  // add degree symbol
+            $("#weatherConditionLocal").text(data.location);
+            //Show pop up on screen
+        }
+    </script>
 
 		<!-- Loading starts -->
 		<div class="loading-wrapper">
@@ -125,7 +218,7 @@
 							<!-- BEGIN: side-nav-content -->
 							<ul class="unifyMenu" id="unifyMenu">
 								<li class="active selected">
-									<a href="dashboard.html">
+									<a href="dashboard.php">
 										<span class="has-icon">
 											<i class="icon-laptop_windows"></i>
 										</span>
@@ -204,7 +297,20 @@
 					<div class="main-content">
 							<div class="gutters row">
 								<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-									<button onclick="getLocation()" class="btn btn-primary">Get My Location <i class="icon-target2"></i></button>
+                                    <?php
+                                        // TODO: Add loggedInUser Id here @develen
+                                        $loggedInUser= 1;
+                                        $userGeoData = mysqli_fetch_array(mysqli_query($database,"SELECT longitude,latitude,last_known_location FROM user WHERE id='{$loggedInUser}'"));
+                                        if($userGeoData['longitude'] || $userGeoData['latitude'] || $userGeoData['last_known_location']){
+                                            $hasLocationData=1;
+                                        }else
+                                            $hasLocationData=0;
+                                    ?>
+                                    <?php if($hasLocationData): ?>
+									    <button onclick="getLocation()" class="btn btn-primary">Update My Location <i class="icon-target2"></i></button>
+                                    <?php else: ?>
+                                        <button onclick="getLocation()" class="btn btn-primary">Get My Location <i class="icon-target2"></i></button>
+                                    <?php endif; ?>
 								</div>
 								<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 									<button class="btn btn-primary">Edit My Profile <i class="icon-gears"></i></button>
@@ -223,14 +329,41 @@
 							</div>
 							<div class="row gutters" style="margin-top: 30px">
 								<!-- visual representation for climate condition -->
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-									<div class="weather-widget cloudy">
-										<h3 id="weatherConditionsText">Showers</h3>
-										<p id="weatherConditionYear">2018</p>
-										<h2 id="weatherConditionDegree">12&deg;</h2>
-										<p id="weatherConditionLocal">Ibadan, Nigeria</p>
-									</div>
-								</div>
+                                <?php
+                                    if($hasLocationData):
+                                        $userGeoDataLat     =   $userGeoData['latitude'];
+                                        $userGeoDataLong    =   $userGeoData['longitude'];
+                                        $userGeoDataAddress =   $userGeoData['last_known_location'];
+                                    ?>
+                                    <script>
+                                        //Update ui with info already saved
+                                        var userGeoLocation = {
+                                            lat 	:	<?=$userGeoDataLat?>,
+                                            long	:	<?=$userGeoDataLong?>,
+                                            address :   '<?=$userGeoDataAddress?>'
+                                        };
+                                        getWeather(userGeoLocation,'<?php echo $userGeoDataAddress; ?>');
+                                    </script>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <div class="weather-widget cloudy">
+                                            <h3 id="weatherConditionsText">Showers</h3>
+                                            <p id="weatherConditionYear">2018</p>
+                                            <h2 id="weatherConditionDegree">12&deg;</h2>
+                                            <p id="weatherConditionLocal">Ibadan, Nigeria</p>
+                                        </div>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <div class="weather-widget cloudy">
+                                            <h3 id="weatherConditionsText">Showers</h3>
+                                            <p id="weatherConditionYear">2018</p>
+                                            <h2 id="weatherConditionDegree">12&deg;</h2>
+                                            <p id="weatherConditionLocal">Ibadan, Nigeria</p>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+
+
 								<!-- only one should be displayed according to the area's climate -->
 
 
@@ -266,7 +399,6 @@
 		</div>
 		<!-- END: .app-wrap -->
 		<!-- jQuery first, then Tether, then other JS. -->
-		<script src="js/jquery.js"></script>
 		<script src="js/tether.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="vendor/unifyMenu/unifyMenu.js"></script>
@@ -287,94 +419,6 @@
 
 		<!-- Common JS -->
 		<script src="js/common.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			function getLocation() {
-                if(navigator.geolocation){
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                        geo_loc = processGeolocationResult(position);
-                        currLatLong = geo_loc.split(",");
-                        initializeCurrent(currLatLong[0], currLatLong[1]);
-                    });
-                }else
-                   alert("Browser does not support Geo location");
-            }
 
-			//Get geo location result
-                function processGeolocationResult(position) {
-                    html5Lat = position.coords.latitude; //Get latitude
-                    html5Lon = position.coords.longitude; //Get longitude
-                    html5TimeStamp = position.timestamp; //Get timestamp
-                    html5Accuracy = position.coords.accuracy; //Get accuracy in meters
-                    return (html5Lat).toFixed(8) + ", " + (html5Lon).toFixed(8);
-                }
-
-                //Check value is present or not & call google api function
-				function initializeCurrent(latcurr, longcurr) {
-					var geoLoc ={
-					  	lat 	:	latcurr,
-						long	:	longcurr
-					};
-					var apiKey = 'AIzaSyCtaAySLoRcPoiR-UF2DgkL0pNB3Cmhsrg';
-					var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+latcurr+','+longcurr+'&key='+apiKey;
-                    $.ajax({
-						url:	url,
-						success : function (response) {
-						    if(response.status==='OK' && (response['results'])){
-                                var address = processUserLocation(response);
-                                //Add address gotten from gmap api to data
-                                geoLoc.address = address ;
-                                getWeather(geoLoc,address);
-							}
-                        },
-						error	: function (response) {}
-					});
-				}
-            function getWeather(location,gMapApiAddress) {
-                //Use Data to getCurrent Weather
-                $.ajax({
-                    method	: 	"POST",
-                    url		:	'ajax/getLocationWeather.php',
-					data	:	location,
-                    success : function (response) {
-                        response = JSON.parse(response);
-                        var year  			= response.date.length>4 ? response.date.substr(0,4) : currentDate.getFullYear();
-                        var forecastData 	= response.forecast[0];
-                        var conditionText	= forecastData.conditionsText;
-                        var weatherData = {
-                            condition	:	conditionText,
-                            year		:	year,
-                        	temp		:	parseInt(forecastData.temperatures.value),
-							location	:	gMapApiAddress
-						};
-                        updateWeatherUI(weatherData);
-                    },
-                    error	: function (response) {}
-                });
-            }
-
-            function processUserLocation(response) {
-                //Map Api returns nearby location choose on randomly and set as string location
-                //Google Maps Api returns more than one address ,fetch one index at random
-                var maxIndex    = response['results'].length;
-                var randomIndex = Math.floor(Math.random() * maxIndex); // number between 0 and 8
-                //Pick last two address ie Lagos,Nigeria or Oyo,Nigeria
-                var result      = response['results'][randomIndex]['address_components'];
-                return (result.length === 1) ? result[0].long_name : result[result.length - 2].long_name + ', ' + result[result.length - 1].long_name;
-            }
-
-            function updateWeatherUI(data) {
-                var condition = data.condition;
-                condition	  = condition.split(",");
-                //Pick one of the conditions
-                var randomIndex = Math.floor(Math.random() * condition.length); // number between 0 and length
-				condition	  = condition[randomIndex];
-			    //Update text on screen to new values
-                $("#weatherConditionYear").text(data.year);
-			    $("#weatherConditionsText").text(condition);
-                $("#weatherConditionDegree").text(data.temp);
-                $("#weatherConditionLocal").text(data.location);
-                //Show pop up on screen
-            }
-		</script>
 	</body>
 </html>

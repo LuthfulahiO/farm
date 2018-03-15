@@ -95,4 +95,4 @@ ALTER TABLE `inventory`
 ALTER TABLE `inventory`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
-
+ALTER TABLE `user` ADD `latitude` VARCHAR(10) NOT NULL COMMENT 'latitude gotten from api' AFTER `country`, ADD `longitude` VARCHAR(10) NOT NULL COMMENT 'longitude gotten from api' AFTER `latitude`, ADD `last_known_location` VARCHAR(100) NOT NULL COMMENT 'location gotten from gmap api' AFTER `longitude`;

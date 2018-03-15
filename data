@@ -1,0 +1,455 @@
+//G map api response format, weather api response
+[
+  {
+  "results" : [
+    {
+      "address_components" : [
+        {
+          "long_name" : "Odenike Street",
+          "short_name" : "Odenike St",
+          "types" : [ "route" ]
+        },
+        {
+          "long_name" : "Abule ijesha",
+          "short_name" : "Abule ijesha",
+          "types" : [ "neighborhood", "political" ]
+        },
+        {
+          "long_name" : "Somolu",
+          "short_name" : "Somolu",
+          "types" : [ "political", "sublocality", "sublocality_level_1" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "Lagos",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "Shomolu",
+          "short_name" : "Shomolu",
+          "types" : [ "administrative_area_level_2", "political" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "LA",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "Nigeria",
+          "short_name" : "NG",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "Odenike St, Abule ijesha, Lagos, Nigeria",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 6.5246225,
+            "lng" : 3.3794429
+          },
+          "southwest" : {
+            "lat" : 6.5242512,
+            "lng" : 3.3792688
+          }
+        },
+        "location" : {
+          "lat" : 6.5244369,
+          "lng" : 3.3793559
+        },
+        "location_type" : "GEOMETRIC_CENTER",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 6.525785830291502,
+            "lng" : 3.380704830291502
+          },
+          "southwest" : {
+            "lat" : 6.523087869708498,
+            "lng" : 3.378006869708498
+          }
+        }
+      },
+      "place_id" : "ChIJ-Ra0qqqNOxARnujfs9HEAYk",
+      "types" : [ "route" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "Abule ijesha",
+          "short_name" : "Abule ijesha",
+          "types" : [ "neighborhood", "political" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "Lagos",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "LA",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "Nigeria",
+          "short_name" : "NG",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "Abule ijesha, Lagos, Nigeria",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 6.5265797,
+            "lng" : 3.385873
+          },
+          "southwest" : {
+            "lat" : 6.5155485,
+            "lng" : 3.371578
+          }
+        },
+        "location" : {
+          "lat" : 6.521699600000001,
+          "lng" : 3.3817264
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 6.5265797,
+            "lng" : 3.385873
+          },
+          "southwest" : {
+            "lat" : 6.5155485,
+            "lng" : 3.371578
+          }
+        }
+      },
+      "place_id" : "ChIJEah_hVWMOxAR9RqNPeGUKbo",
+      "types" : [ "neighborhood", "political" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "Somolu",
+          "short_name" : "Somolu",
+          "types" : [ "political", "sublocality", "sublocality_level_1" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "Lagos",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "LA",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "Nigeria",
+          "short_name" : "NG",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "Somolu, Lagos, Nigeria",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 6.5584802,
+            "lng" : 3.4044528
+          },
+          "southwest" : {
+            "lat" : 6.5168034,
+            "lng" : 3.366859
+          }
+        },
+        "location" : {
+          "lat" : 6.534964599999999,
+          "lng" : 3.3892894
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 6.5584802,
+            "lng" : 3.4044528
+          },
+          "southwest" : {
+            "lat" : 6.5168034,
+            "lng" : 3.366859
+          }
+        }
+      },
+      "place_id" : "ChIJPf76DxONOxARsjgFx69zQ70",
+      "types" : [ "political", "sublocality", "sublocality_level_1" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "Lagos",
+          "short_name" : "Lagos",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "LA",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "Nigeria",
+          "short_name" : "NG",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "Lagos, Nigeria",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 6.7027591,
+            "lng" : 3.4696459
+          },
+          "southwest" : {
+            "lat" : 6.393351099999999,
+            "lng" : 3.0982732
+          }
+        },
+        "location" : {
+          "lat" : 6.5243793,
+          "lng" : 3.3792057
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 6.7027591,
+            "lng" : 3.4696459
+          },
+          "southwest" : {
+            "lat" : 6.393351099999999,
+            "lng" : 3.0982732
+          }
+        }
+      },
+      "place_id" : "ChIJwYCC5iqLOxARy9nDZ6OHntw",
+      "types" : [ "locality", "political" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "Yaba/Igbobi",
+          "short_name" : "Yaba/Igbobi",
+          "types" : [ "administrative_area_level_3", "political" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "Lagos",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "LA",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "Nigeria",
+          "short_name" : "NG",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "Yaba/Igbobi, Lagos, Nigeria",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 6.525958699999999,
+            "lng" : 3.3809399
+          },
+          "southwest" : {
+            "lat" : 6.499095400000001,
+            "lng" : 3.3681039
+          }
+        },
+        "location" : {
+          "lat" : 6.5124223,
+          "lng" : 3.3754249
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 6.525958699999999,
+            "lng" : 3.3809399
+          },
+          "southwest" : {
+            "lat" : 6.499095400000001,
+            "lng" : 3.3681039
+          }
+        }
+      },
+      "place_id" : "ChIJ3Zdo81mMOxARxWJBMUK-7wU",
+      "types" : [ "administrative_area_level_3", "political" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "Shomolu",
+          "short_name" : "Shomolu",
+          "types" : [ "administrative_area_level_2", "political" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "Lagos",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "Lagos",
+          "short_name" : "LA",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "Nigeria",
+          "short_name" : "NG",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "Shomolu, Lagos, Nigeria",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 6.5576294,
+            "lng" : 3.4080961
+          },
+          "southwest" : {
+            "lat" : 6.519047,
+            "lng" : 3.3675534
+          }
+        },
+        "location" : {
+          "lat" : 6.5403253,
+          "lng" : 3.3842473
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 6.5576294,
+            "lng" : 3.4080961
+          },
+          "southwest" : {
+            "lat" : 6.519047,
+            "lng" : 3.3675534
+          }
+        }
+      },
+      "place_id" : "ChIJ8RAlRg6NOxARJYGn_NRK4rA",
+      "types" : [ "administrative_area_level_2", "political" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "Lagos",
+          "short_name" : "LA",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "Nigeria",
+          "short_name" : "NG",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "Lagos, Nigeria",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 6.6972646,
+            "lng" : 4.3500626
+          },
+          "southwest" : {
+            "lat" : 6.371339499999999,
+            "lng" : 2.7013593
+          }
+        },
+        "location" : {
+          "lat" : 6.6079545,
+          "lng" : 3.6217802
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 6.6972646,
+            "lng" : 4.3500626
+          },
+          "southwest" : {
+            "lat" : 6.371339499999999,
+            "lng" : 2.7013593
+          }
+        }
+      },
+      "place_id" : "ChIJDVUn4rryOxAR1om-G3-tcec",
+      "types" : [ "administrative_area_level_1", "political" ]
+    },
+    {
+      "address_components" : [
+        {
+          "long_name" : "Nigeria",
+          "short_name" : "NG",
+          "types" : [ "country", "political" ]
+        }
+      ],
+      "formatted_address" : "Nigeria",
+      "geometry" : {
+        "bounds" : {
+          "northeast" : {
+            "lat" : 13.8856449,
+            "lng" : 14.677982
+          },
+          "southwest" : {
+            "lat" : 4.1821001,
+            "lng" : 2.676932
+          }
+        },
+        "location" : {
+          "lat" : 9.081999,
+          "lng" : 8.675276999999999
+        },
+        "location_type" : "APPROXIMATE",
+        "viewport" : {
+          "northeast" : {
+            "lat" : 13.8856449,
+            "lng" : 14.677982
+          },
+          "southwest" : {
+            "lat" : 4.1821001,
+            "lng" : 2.676932
+          }
+        }
+      },
+      "place_id" : "ChIJDY2kfa8LThARyAvFaEH-qJk",
+      "types" : [ "country", "political" ]
+    }
+  ],
+  "status" : "OK"
+},
+
+{
+"date":"2018-03-14",
+"location":{
+"latitude":6.5243793,"longitude":3.3792057
+},
+"forecast":[
+{ "startTime":"2018-03-14T00:00:00+00:00",
+"endTime":"2018-03-14T00:59:59+00:00",
+"conditionsCode":"911",
+"conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm",
+"temperatures": {
+"value":28.079668045043945,"max":28.501171112060547,"min":28.079668045043945,"units":"C"
+},
+"precipitation":
+{ "chance":15.000000953674316,
+"amount":0,"units":"mm"
+},
+"sky":{
+"cloudCover":83,"sunshine":17
+},
+"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":81.97197723388672,"max":null,"min":null},"wind":{"average":5.049027176164694,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.916333587285916,"units":"C"}},{"startTime":"2018-03-14T01:00:00+00:00","endTime":"2018-03-14T01:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":28.046335220336914,"max":28.50143814086914,"min":28.046335220336914,"units":"C"},"precipitation":{"chance":15.833333015441895,"amount":0,"units":"mm"},"sky":{"cloudCover":83,"sunshine":17},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":81.97197723388672,"max":null,"min":null},"wind":{"average":5.049027176164694,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.900209304920956,"units":"C"}},{"startTime":"2018-03-14T02:00:00+00:00","endTime":"2018-03-14T02:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":27.97966766357422,"max":28.501972198486328,"min":27.97966766357422,"units":"C"},"precipitation":{"chance":17.5,"amount":0,"units":"mm"},"sky":{"cloudCover":83,"sunshine":17},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":81.97197723388672,"max":null,"min":null},"wind":{"average":5.049027176164694,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.867959736777337,"units":"C"}},{"startTime":"2018-03-14T03:00:00+00:00","endTime":"2018-03-14T03:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":27.913002014160156,"max":28.502506256103516,"min":27.913002014160156,"units":"C"},"precipitation":{"chance":19.16666603088379,"amount":0,"units":"mm"},"sky":{"cloudCover":83,"sunshine":17},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":81.9146499633789,"max":null,"min":null},"wind":{"average":4.861321847426914,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.82399205502897,"units":"C"}},{"startTime":"2018-03-14T04:00:00+00:00","endTime":"2018-03-14T04:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":28.621292114257812,"max":28.621292114257812,"min":27.882774353027344,"units":"C"},"precipitation":{"chance":27.5,"amount":0,"units":"mm"},"sky":{"cloudCover":83,"sunshine":17},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":81.8573226928711,"max":null,"min":null},"wind":{"average":4.679749139797908,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.855443305646297,"units":"C"}},{"startTime":"2018-03-14T05:00:00+00:00","endTime":"2018-03-14T05:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":28.85832977294922,"max":28.85832977294922,"min":27.88898468017578,"units":"C"},"precipitation":{"chance":42.5,"amount":0,"units":"mm"},"sky":{"cloudCover":83,"sunshine":17},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":81.80000305175781,"max":null,"min":null},"wind":{"average":4.505051177393213,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.962294296219188,"units":"C"}},{"startTime":"2018-03-14T06:00:00+00:00","endTime":"2018-03-14T06:59:59+00:00","conditionsCode":"511","conditionsText":"Cloudy Day, No Rain, Light Wind\/Calm","temperatures":{"value":29.179061889648438,"max":29.179061889648438,"min":28.094257354736328,"units":"C"},"precipitation":{"chance":80,"amount":0,"units":"mm"},"sky":{"cloudCover":98,"sunshine":2},"solar":{"amount":250,"units":"Wh\/m^2"},"relativeHumidity":{"average":74.5999984741211,"max":null,"min":null},"wind":{"average":4.275947744228732,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":23.679735873211694,"units":"C"}},{"startTime":"2018-03-14T07:00:00+00:00","endTime":"2018-03-14T07:59:59+00:00","conditionsCode":"511","conditionsText":"Cloudy Day, No Rain, Light Wind\/Calm","temperatures":{"value":29.40755271911621,"max":29.40755271911621,"min":28.094257354736328,"units":"C"},"precipitation":{"chance":72.5,"amount":0,"units":"mm"},"sky":{"cloudCover":98,"sunshine":2},"solar":{"amount":250,"units":"Wh\/m^2"},"relativeHumidity":{"average":74.5999984741211,"max":null,"min":null},"wind":{"average":4.275947744228732,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":23.789849506733333,"units":"C"}},{"startTime":"2018-03-14T08:00:00+00:00","endTime":"2018-03-14T08:59:59+00:00","conditionsCode":"511","conditionsText":"Cloudy Day, No Rain, Light Wind\/Calm","temperatures":{"value":29.864530563354492,"max":29.864530563354492,"min":28.094257354736328,"units":"C"},"precipitation":{"chance":57.5,"amount":0,"units":"mm"},"sky":{"cloudCover":98,"sunshine":2},"solar":{"amount":250,"units":"Wh\/m^2"},"relativeHumidity":{"average":74.5999984741211,"max":null,"min":null},"wind":{"average":4.275947744228732,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.01006986640448,"units":"C"}},{"startTime":"2018-03-14T09:00:00+00:00","endTime":"2018-03-14T09:59:59+00:00","conditionsCode":"311","conditionsText":"Partly Sunny Day, No Rain, Light Wind\/Calm","temperatures":{"value":30.321510314941406,"max":30.321510314941406,"min":28.094257354736328,"units":"C"},"precipitation":{"chance":42.5,"amount":0,"units":"mm"},"sky":{"cloudCover":42,"sunshine":58},"solar":{"amount":908,"units":"Wh\/m^2"},"relativeHumidity":{"average":73.5,"max":null,"min":null},"wind":{"average":4.697981592069312,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":23.98278898652586,"units":"C"}},{"startTime":"2018-03-14T10:00:00+00:00","endTime":"2018-03-14T10:59:59+00:00","conditionsCode":"311","conditionsText":"Partly Sunny Day, No Rain, Light Wind\/Calm","temperatures":{"value":30.54999542236328,"max":30.54999542236328,"min":28.395872116088867,"units":"C"},"precipitation":{"chance":36.66666793823242,"amount":0,"units":"mm"},"sky":{"cloudCover":42,"sunshine":58},"solar":{"amount":908,"units":"Wh\/m^2"},"relativeHumidity":{"average":72.4000015258789,"max":null,"min":null},"wind":{"average":5.251864339173833,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":23.986519880547643,"units":"C"}},{"startTime":"2018-03-14T11:00:00+00:00","endTime":"2018-03-14T11:59:59+00:00","conditionsCode":"311","conditionsText":"Partly Sunny Day, No Rain, Light Wind\/Calm","temperatures":{"value":28.999101638793945,"max":30.54998779296875,"min":28.999101638793945,"units":"C"},"precipitation":{"chance":40,"amount":0,"units":"mm"},"sky":{"cloudCover":42,"sunshine":58},"solar":{"amount":908,"units":"Wh\/m^2"},"relativeHumidity":{"average":71.30000305175781,"max":null,"min":null},"wind":{"average":5.9005830030141695,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.0209481423766,"units":"C"}},{"startTime":"2018-03-14T12:00:00+00:00","endTime":"2018-03-14T12:59:59+00:00","conditionsCode":"511","conditionsText":"Cloudy Day, No Rain, Light Wind\/Calm","temperatures":{"value":29.9720516204834,"max":30.549976348876953,"min":29.9720516204834,"units":"C"},"precipitation":{"chance":90,"amount":0,"units":"mm"},"sky":{"cloudCover":90,"sunshine":10},"solar":{"amount":880,"units":"Wh\/m^2"},"relativeHumidity":{"average":71.90837097167969,"max":null,"min":null},"wind":{"average":7.025281389230607,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.62913033816932,"units":"C"}},{"startTime":"2018-03-14T13:00:00+00:00","endTime":"2018-03-14T13:59:59+00:00","conditionsCode":"511","conditionsText":"Cloudy Day, No Rain, Light Wind\/Calm","temperatures":{"value":29.806791305541992,"max":30.549976348876953,"min":29.806791305541992,"units":"C"},"precipitation":{"chance":80,"amount":0,"units":"mm"},"sky":{"cloudCover":90,"sunshine":10},"solar":{"amount":880,"units":"Wh\/m^2"},"relativeHumidity":{"average":71.90837097167969,"max":null,"min":null},"wind":{"average":7.025281389230607,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.549870099451276,"units":"C"}},{"startTime":"2018-03-14T14:00:00+00:00","endTime":"2018-03-14T14:59:59+00:00","conditionsCode":"511","conditionsText":"Cloudy Day, No Rain, Light Wind\/Calm","temperatures":{"value":29.476268768310547,"max":30.549976348876953,"min":29.476268768310547,"units":"C"},"precipitation":{"chance":60.000003814697266,"amount":0,"units":"mm"},"sky":{"cloudCover":90,"sunshine":10},"solar":{"amount":880,"units":"Wh\/m^2"},"relativeHumidity":{"average":71.90837097167969,"max":null,"min":null},"wind":{"average":7.025281389230607,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.391345744254934,"units":"C"}},{"startTime":"2018-03-14T15:00:00+00:00","endTime":"2018-03-14T15:59:59+00:00","conditionsCode":"411","conditionsText":"Mostly Cloudy Day, No Rain, Light Wind\/Calm","temperatures":{"value":29.145748138427734,"max":30.549976348876953,"min":29.145748138427734,"units":"C"},"precipitation":{"chance":40,"amount":0,"units":"mm"},"sky":{"cloudCover":80,"sunshine":20},"solar":{"amount":292,"units":"Wh\/m^2"},"relativeHumidity":{"average":73.70075225830078,"max":null,"min":null},"wind":{"average":6.786114919196607,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.64402877952462,"units":"C"}},{"startTime":"2018-03-14T16:00:00+00:00","endTime":"2018-03-14T16:59:59+00:00","conditionsCode":"411","conditionsText":"Mostly Cloudy Day, No Rain, Light Wind\/Calm","temperatures":{"value":28.930124282836914,"max":30.283308029174805,"min":28.930124282836914,"units":"C"},"precipitation":{"chance":25,"amount":0,"units":"mm"},"sky":{"cloudCover":80,"sunshine":20},"solar":{"amount":292,"units":"Wh\/m^2"},"relativeHumidity":{"average":75.4931411743164,"max":null,"min":null},"wind":{"average":6.547897813015028,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.813842738182764,"units":"C"}},{"startTime":"2018-03-14T17:00:00+00:00","endTime":"2018-03-14T17:59:59+00:00","conditionsCode":"411","conditionsText":"Mostly Cloudy Day, No Rain, Light Wind\/Calm","temperatures":{"value":28.829395294189453,"max":29.749975204467773,"min":28.829395294189453,"units":"C"},"precipitation":{"chance":15.000000953674316,"amount":0,"units":"mm"},"sky":{"cloudCover":80,"sunshine":20},"solar":{"amount":292,"units":"Wh\/m^2"},"relativeHumidity":{"average":77.2855224609375,"max":null,"min":null},"wind":{"average":6.31073782908542,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.900544541072666,"units":"C"}},{"startTime":"2018-03-14T18:00:00+00:00","endTime":"2018-03-14T18:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":28.728666305541992,"max":29.216642379760742,"min":28.728666305541992,"units":"C"},"precipitation":{"chance":5,"amount":0,"units":"mm"},"sky":{"cloudCover":69,"sunshine":31},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":78.39035034179688,"max":null,"min":null},"wind":{"average":6.480355026078784,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.831203142740243,"units":"C"}},{"startTime":"2018-03-14T19:00:00+00:00","endTime":"2018-03-14T19:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":28.62996482849121,"max":28.949979782104492,"min":28.62996482849121,"units":"C"},"precipitation":{"chance":4.1666669845581055,"amount":0,"units":"mm"},"sky":{"cloudCover":69,"sunshine":31},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":79.49517059326172,"max":null,"min":null},"wind":{"average":6.6531866294376485,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":24.88837457263715,"units":"C"}},{"startTime":"2018-03-14T20:00:00+00:00","endTime":"2018-03-14T20:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":28.53329086303711,"max":28.949987411499023,"min":28.53329086303711,"units":"C"},"precipitation":{"chance":12.5,"amount":0,"units":"mm"},"sky":{"cloudCover":69,"sunshine":31},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":80.5999984741211,"max":null,"min":null},"wind":{"average":6.828989101656163,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":25.072841837202315,"units":"C"}},{"startTime":"2018-03-14T21:00:00+00:00","endTime":"2018-03-14T21:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":28.436616897583008,"max":28.949995040893555,"min":28.436616897583008,"units":"C"},"precipitation":{"chance":20.833332061767578,"amount":0,"units":"mm"},"sky":{"cloudCover":63,"sunshine":37},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":81.03333282470703,"max":null,"min":null},"wind":{"average":6.792389041649609,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":25.115784435173556,"units":"C"}},{"startTime":"2018-03-14T22:00:00+00:00","endTime":"2018-03-14T22:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":28.366493225097656,"max":28.856950759887695,"min":28.366493225097656,"units":"C"},"precipitation":{"chance":37.5,"amount":0,"units":"mm"},"sky":{"cloudCover":63,"sunshine":37},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":81.46666717529297,"max":null,"min":null},"wind":{"average":6.755815065018334,"max":null,"min":null,"units":"m\/sec"},"dewPoint":{"amount":25.125840959056987,"units":"C"}},{"startTime":"2018-03-14T23:00:00+00:00","endTime":"2018-03-14T23:59:59+00:00","conditionsCode":"911","conditionsText":"Mostly Cloudy Night, No Rain, Light Wind\/Calm","temperatures":{"value":28.322919845581055,"max":28.670848846435547,"min":28.322919845581055,"units":"C"},"precipitation":{"chance":62.5,"amount":0,"units":"mm"},"sky":{"cloudCover":63,"sunshine":37},"solar":{"amount":0,"units":"Wh\/m^2"},"relativeHumidity":{"average":81.9000015258789,"max":null,"min":null
+},"wind":{"average":6.719268270193482,"max":null,"min":null,"units":"m\/sec"},
+"dewPoint":{"amount":25.10294790565454,"units":"C"}}],"_links":{"self":
+{"href":"\/v2\/weather\/locations\/6.5243793,3.3792057\/forecasts\/2018-03-14"}}
+}
+
+]
+
+
+

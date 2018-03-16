@@ -198,6 +198,15 @@ require_once "includes/initialize.php";
 			</header>
 			<!-- END: .app-heading -->
 			<!-- BEGIN .app-container -->
+            <?php
+            // TODO: Add loggedInUser Id here @develen
+            $loggedInUser= 1;
+            $userGeoData = mysqli_fetch_array(mysqli_query($database,"SELECT longitude,latitude,last_known_location FROM user WHERE id='{$loggedInUser}'"));
+            if($userGeoData['longitude'] || $userGeoData['latitude'] || $userGeoData['last_known_location']){
+                $hasLocationData=1;
+            }else
+                $hasLocationData=0;
+            ?>
 			<div class="app-container">
 				<!-- BEGIN .app-side -->
 				<aside class="app-side" id="app-side">
@@ -209,7 +218,11 @@ require_once "includes/initialize.php";
 								<!-- <img src="img/unify.png" alt="Unify Admin Dashboard" /> -->
 								<h3>FarmZ</h3>
 							</a>
-							<h6 class="location-name">San Francisco</h6>
+							<h6 class="location-name">
+                                <?php
+                                    echo $userGeoData['last_known_location'];
+                                ?>
+                            </h6>
 							<!-- <button class="btn btn-primary">Get My Location</button> -->
 						</div>
 						<!-- END .user-profile -->
@@ -242,7 +255,7 @@ require_once "includes/initialize.php";
 									</a>
 								</li>
 								<li>
-									<a href="news.html">
+									<a href="news.php">
 										<span class="has-icon">
 											<i class="icon-info-large-outline"></i>
 										</span>
@@ -297,15 +310,6 @@ require_once "includes/initialize.php";
 					<div class="main-content">
 							<div class="gutters row">
 								<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                                    <?php
-                                        // TODO: Add loggedInUser Id here @develen
-                                        $loggedInUser= 1;
-                                        $userGeoData = mysqli_fetch_array(mysqli_query($database,"SELECT longitude,latitude,last_known_location FROM user WHERE id='{$loggedInUser}'"));
-                                        if($userGeoData['longitude'] || $userGeoData['latitude'] || $userGeoData['last_known_location']){
-                                            $hasLocationData=1;
-                                        }else
-                                            $hasLocationData=0;
-                                    ?>
                                     <?php if($hasLocationData): ?>
 									    <button onclick="getLocation()" class="btn btn-primary">Update My Location <i class="icon-target2"></i></button>
                                     <?php else: ?>

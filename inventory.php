@@ -136,7 +136,7 @@
 							</a>
 						</li>
 						<li class="active selected">
-							<a href="news.html">
+							<a href="news.php">
 										<span class="has-icon">
 											<i class="icon-flash-outline"></i>
 										</span>

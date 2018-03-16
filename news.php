@@ -1,3 +1,15 @@
+<?php
+    require_once "includes/initialize.php";
+    $newsApi    =   new NewsApi();
+    $latestNews =   $newsApi->getAllTopics();
+    //print_r($latestNews->articles);
+    //die(1);
+    if($latestNews->status==='ok' && $latestNews->totalResults > 0)
+        $showNews   = 1;
+    else
+        $showNews   = 0;
+    //echo $latestNews->status;
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -66,7 +78,7 @@
 										<span class="user-name">Custom User</span>
 										<i class="icon-chevron-small-down"></i>
 									</a>
-									<div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
+	    								<div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
 										<ul class="user-settings-list">
 											<li>
 												<a href="profile.html">
@@ -148,7 +160,7 @@
 									</a>
 								</li>
 								<li class="active selected">
-									<a href="news.html">
+									<a href="news.php">
 										<span class="has-icon">
 											<i class="icon-info-large-outline"></i>
 										</span>
@@ -205,76 +217,30 @@
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 								<div class="card">
 									<div class="card-header">News Feed</div>
-									<div class="card-body">
-										<div class="scroll-stats">
-											<ul id="newsticker">
-												<li>
-													<div class="ticker-image">
-														<img src="img/avatar1.svg" alt="Unify Admin" />
-													</div>
-													<div class="ticker-wrapper">
-														<h1>News Heading</h1>
-														Unify is an American multinational conglomerate founded on Aprll 10th, 2017, by ParkerThemes Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id vitae nihil odio assumenda facere ab quae facilis! Fugit, eius assumenda, aliquid eligendi tempora suscipit! Distinctio doloremque quas alias, eveniet voluptate? <a href="#">Read more</a>
-													</div>
-												</li>
-												<li>
-													<div class="ticker-image">
-														<img src="img/avatar2.svg" alt="Unify Admin" />
-													</div>
-													<div class="ticker-wrapper">
-														<h1>News Heading</h1>
-														Unify template is highly customizable and can be used as admin dashboard or user dashboard Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus architecto modi porro vitae et ea, quam iure voluptatibus id nulla! Excepturi, ut deleniti eveniet repellendus maxime dignissimos soluta! Non, soluta! <a href="#">Read more</a>
-													</div>
-												</li>
-												<li>
-													<div class="ticker-image">
-														<img src="img/avatar1.svg" alt="Unify Admin" />
-													</div>
-													<div class="ticker-wrapper">
-														<h1>News Heading</h1>
-														Unify – A new professional admin template, based on Bootstrap framework Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore deserunt, eligendi aperiam tempore, veniam suscipit minus corporis et accusamus perspiciatis aliquam consectetur ex expedita? Excepturi consectetur magni incidunt deleniti commodi.<a href="#">Read more</a>
-													</div>
-												</li>
-												<li>
-													<div class="ticker-image">
-														<img src="img/avatar2.svg" alt="Unify Admin" />
-													</div>
-													<div class="ticker-wrapper">
-														<h1>News Heading</h1>
-														Unify is a clean and minimal Bootstrap based admin template with comes in HTML5 version Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error voluptas nihil sit commodi at consequuntur similique doloribus delectus, fuga, adipisci saepe repudiandae iste? Recusandae labore ab at reiciendis qui quae.<a href="#">Read more</a>
-													</div>
-												</li>
-												<li>
-													<div class="ticker-image">
-														<img src="img/avatar2.svg" alt="Unify Admin" />
-													</div>
-													<div class="ticker-wrapper">
-														<h1>News Heading</h1>
-														Unify is a clean and minimal Bootstrap based admin template with comes in HTML5 version Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error voluptas nihil sit commodi at consequuntur similique doloribus delectus, fuga, adipisci saepe repudiandae iste? Recusandae labore ab at reiciendis qui quae.<a href="#">Read more</a>
-													</div>
-												</li>
-												<li>
-													<div class="ticker-image">
-														<img src="img/avatar2.svg" alt="Unify Admin" />
-													</div>
-													<div class="ticker-wrapper">
-														<h1>News Heading</h1>
-														Unify is a clean and minimal Bootstrap based admin template with comes in HTML5 version Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error voluptas nihil sit commodi at consequuntur similique doloribus delectus, fuga, adipisci saepe repudiandae iste? Recusandae labore ab at reiciendis qui quae.<a href="#">Read more</a>
-													</div>
-												</li>
-												<li>
-													<div class="ticker-image">
-														<img src="img/avatar2.svg" alt="Unify Admin" />
-													</div>
-													<div class="ticker-wrapper">
-														<h1>News Heading</h1>
-														Unify is a clean and minimal Bootstrap based admin template with comes in HTML5 version Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error voluptas nihil sit commodi at consequuntur similique doloribus delectus, fuga, adipisci saepe repudiandae iste? Recusandae labore ab at reiciendis qui quae.<a href="#">Read more</a>
-													</div>
-												</li>
-											</ul>
-											<i class="icon-triangle-up" id="newsticker-up"></i>
-											<i class="icon-triangle-down" id="newsticker-down"></i>
+                                    <?php if($showNews): ?>
+									    <div class="card-body">
+										    <div class="scroll-stats">
+											    <ul id="newsticker">
+                                                    <?php foreach ($latestNews->articles as  $val):
+                                                        ?>
+                                                        <li>
+                                                            <div class="ticker-image">
+                                                                <img src="<?php echo $val->urlToImage ; ?>" alt="Unify Admin" />
+                                                            </div>
+                                                            <div class="ticker-wrapper">
+                                                                <h3><?php echo $val->title ; ?></h3>
+                                                                    <?php echo $val->description ; ?>
+                                                                <a target="_blank" href="<?php echo  $val->url ; ?>">Read more</a>
+                                                            </div>
+                                                        </li>
+                                                    <?php endforeach; ?>
+    											</ul>
+	    										<i class="icon-triangle-up" id="newsticker-up"></i>
+    											<i class="icon-triangle-down" id="newsticker-down"></i>
 										</div>
+                                    <?php else: ?>
+                                        No data to show
+                                    <?php endif; ?>
 									</div>
 								</div>
 							</div>
